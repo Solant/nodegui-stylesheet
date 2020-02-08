@@ -1,3 +1,5 @@
+import { Pt, Px, Value, toString } from './units';
+
 interface Styles {
     // flexbox
     flex: number,
@@ -17,7 +19,7 @@ interface Styles {
 
     // fonts
     fontFamily: string,
-    fontSize: string,
+    fontSize: Pt | Px,
     fontWeight: 'bold',
 }
 
@@ -26,11 +28,14 @@ function dashify(arg: string) {
 }
 
 // some values, like font-size SHOULD NOT be wrapped to be properly applied
-function wrap(arg: string | number) {
-    if (Number.isNaN(Number.parseInt(`${arg}`))) {
+function wrap(arg: string | number | Value) {
+    if (typeof arg === 'string') {
         return `"${arg}"`;
+    } else if (typeof arg === 'number') {
+        return arg.toString();
+    } else {
+        return toString(arg);
     }
-    return arg;
 }
 
 export function create<T extends { [key: string]: Partial<Styles> }, R extends { [key in keyof T]: string }>(arg: T): R {
