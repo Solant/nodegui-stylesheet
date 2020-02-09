@@ -1,4 +1,5 @@
 import { Pt, Px, Value, toString } from './units';
+export { units } from './units';
 
 interface Styles {
     // flexbox
