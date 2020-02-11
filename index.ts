@@ -21,7 +21,8 @@ interface Styles {
     // fonts
     fontFamily: string,
     fontSize: Pt | Px,
-    fontWeight: 'bold',
+    fontStyle: 'normal' | 'italic' | 'oblique',
+    fontWeight: 'normal' | 'bold' | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900,
 }
 
 function dashify(arg: string) {
