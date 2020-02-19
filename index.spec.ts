@@ -11,6 +11,26 @@ describe('index', function () {
         });
         expect(style.message).toContain(`"Times New Roman"`);
         expect(style.message).toContain(`font-size: 12px`);
-        expect(style.message[style.message.length - 1]).toBe(';');
+    });
+
+    it('should end with semicolon', () => {
+        const style = create({
+            test: {
+                fontSize: 14,
+                alignItems: 'center',
+            }
+        });
+
+        expect(style.test).toMatch(/;$/);
+    });
+
+    it('should add units to font size', () => {
+        const style = create({
+            test: {
+                fontSize: 14,
+            }
+        });
+
+        expect(style.test).toContain('14px');
     });
 });

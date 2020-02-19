@@ -1,5 +1,6 @@
 import { Pt, Px, Value, toString } from './units';
 export { units } from './units';
+import { units } from './units';
 
 interface Styles {
     // flexbox
@@ -20,7 +21,8 @@ interface Styles {
 
     // fonts
     fontFamily: string,
-    fontSize: Pt | Px,
+    // fallback: number will be treated like pixel units
+    fontSize: Pt | Px | number,
     fontStyle: 'normal' | 'italic' | 'oblique',
     fontWeight: 'normal' | 'bold' | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900,
 }
@@ -30,7 +32,7 @@ function dashify(arg: string) {
 }
 
 // some values, like font-size SHOULD NOT be wrapped to be properly applied
-function wrap(arg: string | number | Value) {
+function wrapValue(arg: string | number | Value) {
     if (typeof arg === 'string') {
         return `"${arg}"`;
     } else if (typeof arg === 'number') {
@@ -40,12 +42,22 @@ function wrap(arg: string | number | Value) {
     }
 }
 
+function wrapEntry(key: keyof Styles, value: string | number | Value): string {
+    if (key === 'fontSize' && typeof value === 'number') {
+        return `${dashify(key)}: ${wrapValue(units(value, 'px'))}`;
+    }
+    return `${dashify(key)}: ${wrapValue(value)}`;
+}
+
 export function create<T extends { [key: string]: Partial<Styles> }, R extends { [key in keyof T]: string }>(arg: T): R {
     const result: { [key: string]: string } = {};
 
     Object.keys(arg).forEach(k => {
         const stylesheet = arg[k];
-        result[k] = Object.entries(stylesheet).map(([k, v]) => `${dashify(k)}: ${wrap(v!)}`).join('; ') + ';';
+        result[k] = Object
+            .entries(stylesheet)
+            .map(([k, v]) => wrapEntry(k as keyof Styles, v as string | number | Value))
+            .join(';') + ';';
     });
 
     // @ts-ignore
