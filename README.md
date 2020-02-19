@@ -12,14 +12,14 @@ Here is a list of inconsistencies that gets handled:
 # Example
 
 ```
-import { create, units } from 'nodegui-stylesheet';
+import { create } from 'nodegui-stylesheet';
 
 const s = create({
   wrapper: {
     flex: 1
   },
   logo: {
-    fontSize: units(12, 'px')
+    fontSize: 14
   }
 });
 ```
