@@ -72,6 +72,9 @@ function wrapEntry(key: keyof Styles, value: string | number | Value): string {
     if (key === 'textAlign') {
         return `${dashify(key)}: ${value}`;
     }
+    if (key === 'color' || key === 'backgroundColor') {
+        return `${dashify(key)}: ${value}`;
+    }
     return `${dashify(key)}: ${wrapValue(value)}`;
 }
 
