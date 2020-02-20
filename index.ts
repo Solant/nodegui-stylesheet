@@ -1,4 +1,4 @@
-import { Pt, Px, Value, toString } from './units';
+import { Pt, Px, Em, Ex, Value, toString } from './units';
 export { units } from './units';
 import { units } from './units';
 
@@ -18,6 +18,11 @@ interface Styles {
     marginRight: number,
     marginTop: number,
     marginBottom: number,
+
+    minHeight: number | Em | Ex | Pt | Px,
+    maxHeight: number | Em | Ex | Pt | Px,
+    minWidth: number | Em | Ex | Pt | Px,
+    maxWidth: number | Em | Ex | Pt | Px,
 
     // fonts
     fontFamily: string,
