@@ -24,6 +24,8 @@ interface Styles {
     minWidth: number | Em | Ex | Pt | Px,
     maxWidth: number | Em | Ex | Pt | Px,
 
+    position: 'relative' | 'absolute',
+
     // fonts
     fontFamily: string,
     // fallback: number will be treated like pixel units
