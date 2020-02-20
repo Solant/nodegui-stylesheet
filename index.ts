@@ -25,6 +25,10 @@ interface Styles {
     maxWidth: number | Em | Ex | Pt | Px,
 
     position: 'relative' | 'absolute',
+    top: number | Em | Ex | Pt | Px,
+    left: number | Em | Ex | Pt | Px,
+    right: number | Em | Ex | Pt | Px,
+    bottom: number | Em | Ex | Pt | Px,
     textDecoration: 'none' | 'underline' | 'overline' | 'line-through',
     // fonts
     fontFamily: string,
