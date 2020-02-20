@@ -13,11 +13,19 @@ interface Styles {
     color: string,
 
     // positioning
-    margin: number,
-    marginLeft: number,
-    marginRight: number,
-    marginTop: number,
-    marginBottom: number,
+    // FIXME: Box Length instead of one value
+    margin: number | Em | Ex | Pt | Px,
+    marginLeft: number | Em | Ex | Pt | Px,
+    marginRight: number | Em | Ex | Pt | Px,
+    marginTop: number | Em | Ex | Pt | Px,
+    marginBottom: number | Em | Ex | Pt | Px,
+
+    // FIXME: Box Length instead of one value
+    padding: number | Em | Ex | Pt | Px,
+    paddingLeft: number | Em | Ex | Pt | Px,
+    paddingRight: number | Em | Ex | Pt | Px,
+    paddingTop: number | Em | Ex | Pt | Px,
+    paddingBottom: number | Em | Ex | Pt | Px,
 
     minHeight: number | Em | Ex | Pt | Px,
     maxHeight: number | Em | Ex | Pt | Px,
