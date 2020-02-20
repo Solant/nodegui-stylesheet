@@ -29,6 +29,7 @@ interface Styles {
     left: number | Em | Ex | Pt | Px,
     right: number | Em | Ex | Pt | Px,
     bottom: number | Em | Ex | Pt | Px,
+    textAlign: 'top' | 'top right' | 'right' | 'bottom right' | 'bottom' | 'bottom left' | 'left' | 'top left',
     textDecoration: 'none' | 'underline' | 'overline' | 'line-through',
     // fonts
     fontFamily: string,
@@ -58,6 +59,9 @@ function wrapEntry(key: keyof Styles, value: string | number | Value): string {
         return `${dashify(key)}: ${wrapValue(units(value, 'px'))}`;
     }
     if (key === 'textDecoration') {
+        return `${dashify(key)}: ${value}`;
+    }
+    if (key === 'textAlign') {
         return `${dashify(key)}: ${value}`;
     }
     return `${dashify(key)}: ${wrapValue(value)}`;
