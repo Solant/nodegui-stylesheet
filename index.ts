@@ -25,7 +25,7 @@ interface Styles {
     maxWidth: number | Em | Ex | Pt | Px,
 
     position: 'relative' | 'absolute',
-
+    textDecoration: 'none' | 'underline' | 'overline' | 'line-through',
     // fonts
     fontFamily: string,
     // fallback: number will be treated like pixel units
@@ -52,6 +52,9 @@ function wrapValue(arg: string | number | Value) {
 function wrapEntry(key: keyof Styles, value: string | number | Value): string {
     if (key === 'fontSize' && typeof value === 'number') {
         return `${dashify(key)}: ${wrapValue(units(value, 'px'))}`;
+    }
+    if (key === 'textDecoration') {
+        return `${dashify(key)}: ${value}`;
     }
     return `${dashify(key)}: ${wrapValue(value)}`;
 }
