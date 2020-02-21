@@ -5,8 +5,11 @@ import { units } from './units';
 interface Styles {
     // flexbox
     flex: number,
-    justifyContent: 'space-around' | 'space-between',
-    alignItems: 'center',
+    flexDirection: 'row' | 'column',
+    justifyContent: 'flex-start' | 'flex-end' | 'center' | 'space-around' | 'space-between',
+    alignItems: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline',
+    alignSelf: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline',
+    alignContent: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline',
 
     // styles
     backgroundColor: string,
