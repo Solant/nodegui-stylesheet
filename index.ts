@@ -93,7 +93,7 @@ function wrapValue(arg: string | number | Value) {
     }
 }
 
-function wrapEntry(key: keyof Styles, value: string | number | Value): string {
+function wrapEntry(key: keyof Styles, value: Styles[keyof Styles]): string {
     if (key === 'fontSize' && typeof value === 'number') {
         return `${dashify(key)}: ${wrapValue(units(value, 'px'))}`;
     }
@@ -106,6 +106,10 @@ function wrapEntry(key: keyof Styles, value: string | number | Value): string {
     if (key === 'color' || key === 'backgroundColor') {
         return `${dashify(key)}: ${value}`;
     }
+    if (Array.isArray(value)) {
+        const values = value.map(wrapValue).join(' ');
+        return `${dashify(key)}: ${values}`;
+    }
     return `${dashify(key)}: ${wrapValue(value)}`;
 }
 
@@ -116,7 +120,7 @@ export function create<T extends { [key: string]: Partial<Styles> }, R extends {
         const stylesheet = arg[k];
         result[k] = Object
             .entries(stylesheet)
-            .map(([k, v]) => wrapEntry(k as keyof Styles, v as string | number | Value))
+            .map(([k, v]) => wrapEntry(k as keyof Styles, v as Styles[keyof Styles]))
             .join(';') + ';';
     });
 

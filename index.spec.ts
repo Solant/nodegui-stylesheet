@@ -33,4 +33,14 @@ describe('index', function () {
 
         expect(style.test).toContain('14px');
     });
+
+    it('should handle arrays', () => {
+        const style = create({
+            test: {
+                borderWidth: [1, units(2, 'px'), 3, 4],
+            }
+        });
+
+        expect(style.test).toContain('1 2px 3 4');
+    });
 });
