@@ -2,6 +2,18 @@ import { Pt, Px, Em, Ex, Value, toString } from './units';
 export { units } from './units';
 import { units } from './units';
 
+type BorderStyle = 'dashed'
+    | 'dot-dash'
+    | 'dot-dot-dash'
+    | 'dotted'
+    | 'double'
+    | 'groove'
+    | 'inset'
+    | 'outset'
+    | 'ridge'
+    | 'solid'
+    | 'none';
+
 interface Styles {
     // flexbox
     flex: number,
@@ -10,6 +22,12 @@ interface Styles {
     alignItems: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline',
     alignSelf: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline',
     alignContent: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline',
+
+    borderStyle: BorderStyle,
+    borderTopStyle: BorderStyle,
+    borderRightStyle: BorderStyle,
+    borderBottomStyle: BorderStyle,
+    borderLeftStyle: BorderStyle,
 
     // styles
     backgroundColor: string,
