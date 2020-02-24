@@ -14,6 +14,10 @@ type BorderStyle = 'dashed'
     | 'solid'
     | 'none';
 
+type BoxLength = Length | [Length] | [Length, Length] | [Length, Length, Length] | [Length, Length, Length, Length];
+
+type Length = number | Em | Ex | Pt | Px;
+
 interface Styles {
     // flexbox
     flex: number,
@@ -28,6 +32,12 @@ interface Styles {
     borderRightStyle: BorderStyle,
     borderBottomStyle: BorderStyle,
     borderLeftStyle: BorderStyle,
+
+    borderWidth: BoxLength,
+    borderTopWidth: Length,
+    borderRightWidth: Length,
+    borderBottomWidth: Length,
+    borderLeftWidth: Length,
 
     // styles
     backgroundColor: string,
