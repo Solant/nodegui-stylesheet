@@ -180,8 +180,11 @@ function wrapValue(arg: string | number | Value): string {
 
 function wrapEntry(key: keyof Styles, value: Styles[keyof Styles]): string {
     if (Array.isArray(value)) {
-        const values = (value as Array<string|Length>).map(wrapValue).join(' ');
-        return `${dashify(key)}: ${values}`;
+        let values: string[] = [];
+        for (let i = 0; i < value.length; i++) {
+            values.push(wrapValue(value[i]));
+        }
+        return `${dashify(key)}: ${values.join(' ')}`;
     }
 
     // support: list of properties that should not be wrapped
