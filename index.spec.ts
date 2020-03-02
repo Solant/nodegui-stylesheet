@@ -43,4 +43,17 @@ describe('index', function () {
 
         expect(style.test).toContain('1 2px 3 4');
     });
+
+    it('some properties should not be wrapped', () => {
+        const style = create({ test: { textAlign: 'bottom', borderLeftStyle: 'dashed' } });
+        expect(style.test).not.toContain('"');
+    });
+
+    it('should handle lineedit-password-character with string and number', () => {
+        const styleNumber = create({ test: { lineeditPasswordCharacter: 9679 } });
+        const styleString = create({ test: { lineeditPasswordCharacter: '●' } });
+
+        expect(styleNumber.test).toContain('9679');
+        expect(styleString.test).toContain('9679');
+    })
 });
