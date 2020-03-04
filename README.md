@@ -11,10 +11,12 @@ Here is a list of inconsistencies that gets handled:
 
 # Example
 
-```
+1 Create a stylesheet
+
+```javascript
 import { create } from 'nodegui-stylesheet';
 
-const s = create({
+const style = create({
   wrapper: {
     flex: 1
   },
@@ -22,4 +24,19 @@ const s = create({
     fontSize: 14
   }
 });
+```
+
+2 Use stylesheet properties instead of long css strings
+```typescript jsx
+// with nogegui-react
+<View style={style.wrapper}>
+  <Text style={style.logo}>Hello</Text>
+</Text>
+```
+
+```javascript
+// with plain nogegui
+const label = new QLabel();
+label.setText("Hello");
+label.setInlineStyle(style.logo);
 ```

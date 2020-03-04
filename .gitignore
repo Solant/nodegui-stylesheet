@@ -2,3 +2,4 @@
 lib/
 *.iml
 /node_modules/
+coverage/
