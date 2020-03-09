@@ -12,6 +12,7 @@ Despite web nature of css styling of Qt widgets, sometimes it can fall flat due 
 Here is a list of inconsistencies that gets handled: 
 1. font-size value requires unit and must be without quotes
 2. some string keywords should not be wrapped in quotes
+3. [lineedit-password-character-prop](https://doc.qt.io/qt-5/stylesheet-reference.html#lineedit-password-character-prop) can accept both unicode number and string (string will be converted to unicode number)
 
 # Example
 
