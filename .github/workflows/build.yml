@@ -27,7 +27,7 @@ jobs:
     - run: npm ci
     - run: npm install codecov
     - run: npm run build --if-present
-    - run: npx jest --coverage
+    - run: npm test
     - run: npx codecov --token="0b0a9bfb-9619-495e-8ea5-bb3222a5de81"
       env:
         CI: true
