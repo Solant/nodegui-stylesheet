@@ -1,4 +1,7 @@
 # nodegui-stylesheet
+![Codecov](https://img.shields.io/codecov/c/github/Solant/nodegui-stylesheet?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Solant/nodegui-stylesheet/Build?style=flat-square)
+![npm](https://img.shields.io/npm/v/nodegui-stylesheet?style=flat-square)
 
 `react-native` inspired implementation of [stylesheet](https://facebook.github.io/react-native/docs/stylesheet), written in typescript
 
