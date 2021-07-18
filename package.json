@@ -9,7 +9,7 @@
   "sideEffects": false,
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c",
     "test": "jest"
   },
   "repository": {
@@ -28,9 +28,13 @@
   },
   "homepage": "https://github.com/Solant/nodegui-stylesheet#readme",
   "devDependencies": {
-    "@types/jest": "^25.1.2",
-    "jest": "^25.1.0",
-    "ts-jest": "^25.2.0",
-    "typescript": "^3.7.5"
+    "@types/jest": "^25.2.3",
+    "esbuild": "^0.12.15",
+    "jest": "^25.5.4",
+    "rollup": "^2.53.2",
+    "rollup-plugin-esbuild": "^4.5.0",
+    "rollup-plugin-ts": "^1.4.0",
+    "ts-jest": "^25.5.1",
+    "typescript": "^3.9.10"
   }
 }
