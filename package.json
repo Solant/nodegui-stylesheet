@@ -6,6 +6,7 @@
   "files": [
     "lib"
   ],
+  "sideEffects": false,
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
