@@ -1,26 +1,20 @@
-import esbuild from 'rollup-plugin-esbuild';
 import ts from "rollup-plugin-ts";
 
-export default [{
-    plugins: [esbuild()],
-    input: 'src/index.ts',
-    output: [
-        {
-            file: `lib/index.js`,
-            format: 'cjs',
-        },
-        {
-            file: `lib/index.mjs`,
-            format: 'es',
-        },
-    ],
-}, {
+import pkg from './package.json';
+
+export default {
     plugins: [ts({
         browserslist: false,
     })],
     input: 'src/index.ts',
-    output: {
-        file: `lib/index.d.ts`,
-        format: 'es',
-    },
-}];
+    output: [
+        {
+            file: pkg.main,
+            format: 'cjs',
+        },
+        {
+            file: pkg.module,
+            format: 'es',
+        },
+    ],
+};
