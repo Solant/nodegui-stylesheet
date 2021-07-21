@@ -30,7 +30,6 @@
   "homepage": "https://github.com/Solant/nodegui-stylesheet#readme",
   "devDependencies": {
     "@types/jest": "^25.2.3",
-    "esbuild": "^0.12.15",
     "jest": "^25.5.4",
     "rollup": "^2.53.2",
     "rollup-plugin-ts": "^1.4.0",
