@@ -1,6 +1,6 @@
 {
   "name": "nodegui-stylesheet",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "react-native inspired implementation of stylesheet, written in typescript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
