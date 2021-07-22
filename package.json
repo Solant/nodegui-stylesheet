@@ -1,14 +1,16 @@
 {
   "name": "nodegui-stylesheet",
   "version": "0.3.0",
-  "description": "",
+  "description": "react-native inspired implementation of stylesheet, written in typescript",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.mjs",
   "files": [
     "lib"
   ],
-  "types": "lib/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c",
     "test": "jest"
   },
   "repository": {
@@ -27,9 +29,11 @@
   },
   "homepage": "https://github.com/Solant/nodegui-stylesheet#readme",
   "devDependencies": {
-    "@types/jest": "^25.1.2",
-    "jest": "^25.1.0",
-    "ts-jest": "^25.2.0",
-    "typescript": "^3.7.5"
+    "@types/jest": "^25.2.3",
+    "jest": "^25.5.4",
+    "rollup": "^2.53.2",
+    "rollup-plugin-ts": "^1.4.0",
+    "ts-jest": "^25.5.1",
+    "typescript": "^3.9.10"
   }
 }

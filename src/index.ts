@@ -1,6 +1,5 @@
-import { Pt, Px, Em, Ex, Value, toString } from './units';
+import { Pt, Px, Em, Ex, Value, toString, units } from './units';
 export { units } from './units';
-import { units } from './units';
 
 type BorderStyle = 'dashed'
     | 'dot-dash'

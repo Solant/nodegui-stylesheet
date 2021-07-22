@@ -1,4 +1,4 @@
-import { toString, units } from './units';
+import { toString, units } from '../src/units';
 
 describe('units', function () {
     it('should create unit', () => {

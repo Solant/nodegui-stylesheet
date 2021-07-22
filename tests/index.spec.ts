@@ -1,4 +1,4 @@
-import { create, units } from './index';
+import { create, units } from '../src';
 
 describe('index', function () {
     it('should create stylesheet', () => {
